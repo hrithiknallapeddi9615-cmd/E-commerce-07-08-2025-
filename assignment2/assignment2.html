@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .header-1 {
+            font-size: 14px;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .icon-space {
+            margin-right: 5px;
+        }
+
+        .header-main {
+            padding: 10px;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .search-bar input {
+            border-radius: 0;
+        }
+
+        .search-btn {
+            background-color: #1976d2;
+            color: white;
+            border-radius: 0;
+        }
+
+        .customer-support {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .customer-support span {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 1 */
+        .navbar {
+            background-color: #2e6fbb;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-weight: bold;
+            padding: 15px 20px;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .dropdown-menu a:hover {
+            background-color: #1f5da0;
+            color: white;
+        }
+
+        .dropdown-menu {
+            min-width: 220px;
+        }
+
+        .divider {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 0 10px;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* 2 */
+        .product-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .text-content h6 {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .text-content h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn-buy {
+            background: #1f5da0;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .btn-buy:hover {
+            background: #004a80;
+        }
+
+        .image-content img {
+            max-width: 350px;
+        }
+
+        .animate-words span {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .animate-words span:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .animate-words span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .animate-words span:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .animate-words span:nth-child(4) {
+            animation-delay: 0.7s;
+        }
+
+        .animate-words span:nth-child(5) {
+            animation-delay: 0.9s;
+        }
+
+        .animate-words span:nth-child(6) {
+            animation-delay: 1.1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /*3*/
+        .offer-card {
+            text-align: center;
+            padding: 20px;
+            background: #f1f7fa;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offer-card img {
+            width: 150px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offer-card:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .offer-card h6 {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .offer-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .offer-card .text-primary {
+            font-weight: bold;
+        }
+
+        /*4*/
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .left-card {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .left-card-text h6 {
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .left-card-text h4 {
+            font-weight: bold;
+        }
+
+        .left-card-text a {
+            font-size: 14px;
+            color: gray;
+            text-decoration: none;
+        }
+
+        .left-card-text a:hover {
+            text-decoration: underline;
+        }
+
+        .right-card {
+            background: #2e6fbb;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            padding: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .right-card:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .right-card h5 {
+            font-weight: bold;
+        }
+
+        .right-card h3 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* 5 */
+        .service-bar {
+            background: #2e6fbb;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .service-item {
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 50px;
+            margin-bottom: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .service-item img:hover {
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-3px);
+            }
+
+            50% {
+                transform: translateX(3px);
+            }
+
+            75% {
+                transform: translateX(-3px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .divider {
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+            height: 50px;
+            margin: auto;
+        }
+
+        .service-title {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .service-text {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /*7*/
+        footer {
+            background: #fff;
+            color: #333;
+            font-size: 14px;
+            padding-top: 40px;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-link {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #2e6fbb;
+        }
+
+        .newsletter-input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .newsletter-btn {
+            background: #2e6fbb;
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+
+        .newsletter-btn:hover {
+            background: #1f4e91;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+            padding-top: 10px;
+            font-size: 13px;
+        }
+
+        .footer-tags a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 5px;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-tags a:hover {
+            color: #2e6fbb;
+        }
+
+        .social-icons a {
+            color: #555;
+            margin-right: 10px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #2e6fbb;
+        }
+
+        .payment-icons img {
+            height: 25px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-1 bg-light">
+        <div class="container d-flex justify-content-between">
+            <div><i class="bi bi-emoji-smile icon-space"></i>ADD SOMETHING HERE...</div>
+            <div>
+                <a href="#" class="me-3 text-decoration-none text-dark"><i
+                        class="bi bi-arrow-repeat icon-space"></i>COMPARE (0)</a> |
+                <a href="#" class="mx-3 text-decoration-none text-dark"><i class="bi bi-heart icon-space"></i>WISHLIST
+                    (0)</a> |
+                <a href="#" class="ms-3 text-decoration-none text-dark"><i class="bi bi-person icon-space"></i>REGISTER
+                    OR SIGN IN</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="header-main">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <img src="digi pic.PNG">
+            </div>
+
+
+            <div class="customer-support">
+
+                <div>
+                    Customer Support <br>
+                    <span>1-900-66-88</span>
+                </div>
+            </div>
+
+
+            <div class="search-bar d-flex">
+                <input type="text" class="form-control" placeholder="I'm shopping for ...">
+                <select class="form-select" style="max-width: 150px;">
+                    <option>Categories</option>
+                    <option>Electronics</option>
+                    <option>Clothing</option>
+                </select>
+                <button class="btn search-btn">search</button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> CATEGORIES</a>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HOME</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Homepage 2</a></li>
+                        <li><a class="dropdown-item" href="#">Homepage 3</a></li>
+                        <li><a class="dropdown-item" href="#">Homepage 4</a></li>
+                        <li><a class="dropdown-item" href="#">Homepage 5</a></li>
+                        <li><a class="dropdown-item" href="#">Homepage 6</a></li>
+                    </ul>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SHOP</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Shop Ajax</a></li>
+                        <li><a class="dropdown-item" href="#">Shop Full width</a></li>
+                        <li><a class="dropdown-item" href="#">Shop Left Sidebar</a></li>
+                        <li><a class="dropdown-item" href="#">Shop Right Sidebar</a></li>
+                    </ul>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">ELEMENTS</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Product Page</a></li>
+                        <li><a class="dropdown-item" href="#">Product Columns</a></li>
+                        <li><a class="dropdown-item" href="#">Products Layout</a></li>
+                        <li><a class="dropdown-item" href="#">Product Left Sidebar</a></li>
+                        <li><a class="dropdown-item" href="#">Product Right Sidebar</a></li>
+                        <li><a class="dropdown-item" href="#">Product Full width</a></li>
+                        <li><a class="dropdown-item" href="#">Product Elements</a></li>
+                        <li><a class="dropdown-item" href="#">Product Deal</a></li>
+                        <li><a class="dropdown-item" href="#">Product Layout 1-3</a></li>
+                        <li><a class="dropdown-item" href="#">Product Layout 1-4</a></li>
+                        <li><a class="dropdown-item" href="#">Product Layout 2-1-2</a></li>
+                        <li><a class="dropdown-item" href="#">Product Variation Color</a></li>
+                        <li><a class="dropdown-item" href="#">Products – Video</a></li>
+                        <li><a class="dropdown-item" href="#">Products – Best Selling</a></li>
+                        <li><a class="dropdown-item" href="#">Products – Recent</a></li>
+                        <li><a class="dropdown-item" href="#">Products – On Sale</a></li>
+                    </ul>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">BLOG</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Blog Shortcode</a></li>
+                    </ul>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACT</a>
+                </li>
+
+                <div class="divider"></div>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">LIKE THEME</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container product-section">
+
+        <div class="text-content">
+            <h6>The Gear 360</h6>
+            <h1 class="animate-words">
+                <span>4K</span>
+                <span>360</span>
+                <span>Video</span><br>
+                <span>Capture</span>
+                <span>life</span>
+                <span>in</span>
+                <span>definition</span>
+            </h1>
+            <p>Starting with $299.00</p>
+            <button class="btn btn-buy">Start Buying</button>
+        </div>
+
+
+        <div class="image-content">
+            <img src="big gadget 1.PNG">
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row text-center g-4">
+
+
+            <div class="col-md-4">
+                <div class="offer-card">
+                    <img src="s1.PNG" width="60px" height="100px">
+                    <h6>Hot Sale</h6>
+                    <p>Big Sale Up To <span class="text-primary">30% Off</span></p>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="offer-card">
+                    <img src="s2.PNG" width="60px" height="100px">
+                    <p><span class="text-primary">Gear 360</span> Capture<br> life in high definition<br> by Samsung</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="offer-card">
+                    <img src="s3.PNG">
+                    <p><span class="text-primary">20% Off</span> at<br> Virtual Reality<br> Glasses</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container py-5">
+        <div class="row g-4">
+
+
+            <div class="col-md-6">
+                <div class="left-card">
+                    <div class="left-card-text">
+                        <h6>Accessories</h6>
+                        <h4>BIG SALE UP TO <span class="text-primary">40% OFF</span></h4>
+                        <a href="#">Get it Now</a>
+                    </div>
+                    <img src="s4.png" class="hover-scale">
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="right-card">
+                    <div>
+                        <h5>BIG SALE</h5>
+                        <h3>50% OFF</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="service-bar">
+        <div class="container">
+            <div class="row text-center align-items-center">
+
+
+                <div class="col-md-3 service-item">
+                    <img src="s5.PNG" alt="Free Delivery">
+                    <p class="service-title">Free Delivery</p>
+                    <p class="service-text">from 50$</p>
+                </div>
+
+                <div class="col-md-1 d-none d-md-flex justify-content-center">
+                    <div class="divider"></div>
+                </div>
+
+
+                <div class="col-md-2 service-item">
+                    <img src="s6.PNG" alt="Secure Payment">
+                    <p class="service-title">Secure Payment</p>
+                    <p class="service-text">All cards accepted</p>
+                </div>
+
+                <div class="col-md-1 d-none d-md-flex justify-content-center">
+                    <div class="divider"></div>
+                </div>
+
+
+                <div class="col-md-2 service-item">
+                    <img src="s7.PNG" alt="Help Center">
+                    <p class="service-title">Help Center</p>
+                    <p class="service-text">24/7 Support System</p>
+                </div>
+
+                <div class="col-md-1 d-none d-md-flex justify-content-center">
+                    <div class="divider"></div>
+                </div>
+
+
+                <div class="col-md-2 service-item">
+                    <img src="s8.PNG" alt="Trustpay">
+                    <p class="service-title">Trustpay</p>
+                    <p class="service-text">Easy Return Policy</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <img src="digi pic.PNG" alt="Logo" class="mb-3">
+                    <p>Cecilia Chapman 711-2880 Nulla St</p>
+                    <p>(+01)-800-3456-88</p>
+                    <p>nasathemes@gmail.com</p>
+                    <p>www.digi.nasatheme.com</p>
+                </div>
+
+
+                <div class="col-md-3">
+                    <p class="footer-title">Information</p>
+                    <a href="#" class="footer-link">Delivery Information</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms & Condition</a>
+                    <a href="#" class="footer-link">Search Terms</a>
+                    <a href="#" class="footer-link">Order & Return</a>
+                </div>
+
+
+                <div class="col-md-3">
+                    <p class="footer-title">Need help</p>
+                    <a href="#" class="footer-link">Customer Service</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms & Condition</a>
+                    <a href="#" class="footer-link">Best Seller</a>
+                    <a href="#" class="footer-link">Manufactures</a>
+                </div>
+
+
+                <div class="col-md-3">
+                    <p class="footer-title">Newsletter</p>
+                    <p>Get instant updates about our new products and special promos!</p>
+                    <input type="email" class="newsletter-input" placeholder="ENTER YOUR EMAIL HERE">
+                    <button class="newsletter-btn">SUBSCRIBE</button>
+                </div>
+            </div>
+
+
+            <div class="footer-tags mt-4 pt-3 border-top">
+                <a href="#">Apple</a> |
+                <a href="#">Beats</a> |
+                <a href="#">Camera</a> |
+                <a href="#">Galaxy</a> |
+                <a href="#">HTC</a> |
+                <a href="#">HTC One M8</a> |
+                <a href="#">iMac</a> |
+                <a href="#">Ipad</a> |
+                <a href="#">Ipad 4 16Gb</a> |
+                <a href="#">Ipad Mini</a> |
+                <a href="#">Keyboard</a> |
+                <a href="#">Mouse</a> |
+                <a href="#">Olloclip</a> |
+                <a href="#">Samsung</a> |
+                <a href="#">Samsung Galaxy S5 - 64gb</a> |
+                <a href="#">Samsung Galaxy S7</a> |
+                <a href="#">Samsung Galaxy Tab 4</a> |
+                <a href="#">Samsung Galaxy Tab S2</a>
+            </div>
+
+
+            <div class="footer-bottom d-flex justify-content-between align-items-center mt-3">
+                <p>© <strong>Digi</strong> - All Right reserved!</p>
+                <div class="payment-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
